@@ -12,8 +12,10 @@ DATE=$(date +%Y%m%d%H%m)
 LOCAL_USER=$USER
 
 echo ""
-# Necessary tool to automate login on ssh and sftp
-sudo apt-get install sshpass
+# Necessary tool to automate login on ssh and sftp (only installs if it isn't)
+if [ ! -f /bin/sshpass ]; then 
+	sudo apt-get install sshpass
+fi
 echo ""
 read -p "Please, introduce the ip address of the remote host: " IP_ADDR
 read -p "Please, enter your username: " USERNAME
