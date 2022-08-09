@@ -8,4 +8,4 @@
  |_|   |_| |_| \___|   \__| \___/ |_|_|_| | .__/ \__,_| |_|   \__,_|  \__| \___/ |_|  
                                           |_|
 ````
-This is a tool created for ebroker to compare two files. If they differ more than 0.5%, they won't be OK.
+This is a tool created for ebroker to compare two files. If they differ more than 0.5% or 8192 bits, they won't be OK.
