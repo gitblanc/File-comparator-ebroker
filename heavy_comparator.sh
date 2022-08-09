@@ -32,18 +32,18 @@ EOF
 SIZE1=$(sshpass -p $PASSWD ssh -oHostKeyAlgorithms=+ssh-dss $USERNAME@$IP_ADDR "echo \$(ls -l /home/$USERNAME/nuevaversion.txz | awk '{print \$5}') ")
 SIZE2=$(sshpass -p $PASSWD ssh -oHostKeyAlgorithms=+ssh-dss $USERNAME@$IP_ADDR "echo \$(ls -l /home/$USERNAME/prueba.txz.bak$DATE | awk '{print \$5}') ")
 
-echo -e "\e[1;34mSize of the new version = $SIZE1\e[0m"
-echo -e "\e[1;34mSize of the old version = $SIZE2\e[0m"
+echo -e "\e[1;34mSize of the new version = $(($SIZE1/1024))K\e[0m"
+echo -e "\e[1;34mSize of the old version = $(($SIZE2/1024))K\e[0m"
 
 # Difference between two files
 SIZE=$(($SIZE1-$SIZE2))
 
-if [ $SIZE > $MAX_VALUE ] ; then
-	echo -e "\e[1;31mDifference = $SIZE\n\e[0m"
+if [ $SIZE -gt $MAX_VALUE ] ; then
+	echo -e "\e[1;31mDifference = $(($SIZE/1024))K\n\e[0m"
 	echo -e "\e[1;31mError, the files differ more than $MAX_VALUE bits\e[0m"
 	echo -e "\e[1;31mQuitting...\e[0m"
 	exit
 fi
-echo -e "\e[1;32mDifference = $SIZE\e[0m"
+echo -e "\e[1;32mDifference = $(($SIZE/1024))K\e[0m"
 echo -e "\e[1;32mEverything correct.\e[0m"
 exit
