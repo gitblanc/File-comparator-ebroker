@@ -1,5 +1,7 @@
 ![](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white)
+<img src="https://user-images.githubusercontent.com/87705461/182097910-c4c560d8-750d-48ad-9aec-05e34ddb4099.png" width="55" height="28">
+
 
 ````
   ___   _   _                                                         _               
